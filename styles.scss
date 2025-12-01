@@ -1,0 +1,229 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+
+:root {
+
+  --gray-900: #1E212C;
+  --gray-800: #424551;
+  --gray-700: #787A80;
+  --gray-600: #9A9CA5;
+  --gray-400: #D7DADD;
+  --gray-300: #E5E8ED;
+  --white: #FFF;
+  --primary: #FF3F3A;
+  --success: #03CEA4;
+  --info: #5A87FC;
+  --warning: #F89828;
+  --pink: #F52F6E;
+  --purple: #7772F1;
+}
+
+.page {
+    background: #fff;
+    font-family: 'Lato', Arial, sans-serif;
+    color: var(--gray-900);
+    min-width: 320px;
+    max-width: 1230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 44px 0 86px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 85px;
+
+    &__subtitle {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+        line-height: 150%;
+    }
+
+    &__title {
+        font-size: 46px;
+        font-weight: 900;
+        line-height: 130%;
+    }
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-bottom: 60px;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        margin: 0;
+        padding: 10px 30px 10px 20px;
+        align-self: center;
+        font-weight: 700;
+        line-height: 160%;
+        font-size: 16px;
+        color: var(--gray-600);
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &__search {
+        position: relative;
+        width: 283px;
+    }
+
+    &__search-icon {
+        position: absolute;
+        right: 16px;
+        top: 14px;
+        width: 16px;
+        height: 16px;
+    }
+
+    &__search-input {
+        box-sizing: border-box;
+        border: 1px solid var(--gray-400);
+        border-radius: 5px;
+        width: 100%;
+        padding: 11px 15px 12px 15px;
+    }
+}
+
+.navbar__item.active {
+    color: var(--primary);
+}
+
+.active {
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+
+    .tag-count {
+        color: var(--primary);
+    }
+}
+
+.tag-count {
+    font-size: 10px;
+    font-weight: 900;
+    font-weight: 700;
+    line-height: 160%;
+    margin-left: 4px;
+    color: var(--gray-600);
+}
+
+.courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    align-items: center; 
+}
+
+@media (max-width: 767px) {
+    .courses {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1229px) {
+    .courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1230px) {
+    .courses {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.course {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid var(--gray-300);
+    max-width: 390px;
+    min-width: 300px;
+    height: 100%;
+
+    &__img {
+        width: 100%;
+        max-height: 240px;
+    }
+
+    &__container {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__tag {
+        width: fit-content;
+        line-height: 150%;
+        padding: 1px 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        color: var(--white);
+    }
+
+    &__name {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 150%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__price {
+        color: var(--primary);
+        font-size: 18px;
+    }
+
+    &__slash {
+        color: var(--gray-700);
+        font-size: 18px;
+        padding: 0 8px;
+    }
+
+    &__instructor {
+        color: var(--gray-700);
+        font-size: 18px;
+    }
+}
+
+.green {
+    background-color: var(--success);
+}
+
+.yellow {
+    background-color: var(--warning);
+}
+
+.purple {
+    background-color: var(--purple);
+}
+
+.pink {
+    background-color: var(--pink); 
+}
+
+.blue {
+    background-color: var(--info);  
+}
